@@ -1,10 +1,25 @@
-import  'dotenv/config'
+import 'dotenv/config';
 
-import { neon } from '@neondatabase/serverless'
-import { drizzle} from 'drizzle-orm/neon-http'
+import { neon, neonConfig } from '@neondatabase/serverless';
+import { drizzle } from 'drizzle-orm/neon-http';
 
-const sql = neon(process.env.DATABASE_URL)
+const databaseUrl = process.env.DATABASE_URL;
 
-const db = drizzle(sql)
+if (!databaseUrl) {
+  throw new Error('DATABASE_URL is required');
+}
 
-export { db, sql }
+const connectionUrl = new URL(databaseUrl);
+const isNeonLocalProxy = ['localhost', '127.0.0.1', 'neon-local'].includes(connectionUrl.hostname);
+
+if (isNeonLocalProxy) {
+  const port = connectionUrl.port || '5432';
+  neonConfig.fetchEndpoint = `http://${connectionUrl.hostname}:${port}/sql`;
+  neonConfig.useSecureWebSocket = false;
+  neonConfig.poolQueryViaFetch = true;
+}
+
+const sql = neon(databaseUrl);
+const db = drizzle(sql);
+
+export { db, sql };

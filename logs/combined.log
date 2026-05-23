@@ -92,3 +92,9 @@
 {"level":"info","message":"::ffff:127.0.0.1 - - [23/May/2026:03:55:39 +0000] \"GET /health HTTP/1.1\" 403 67 \"-\" \"PostmanRuntime/7.49.1\"","service":"acquisitions-api","timestamp":"2026-05-23T03:55:39.489Z"}
 {"ip":"::ffff:127.0.0.1","level":"warn","message":"Bot request blocked","path":"/health","service":"acquisitions-api","timestamp":"2026-05-23T03:55:40.064Z","userAgent":"PostmanRuntime/7.49.1"}
 {"level":"info","message":"::ffff:127.0.0.1 - - [23/May/2026:03:55:40 +0000] \"GET /health HTTP/1.1\" 403 67 \"-\" \"PostmanRuntime/7.49.1\"","service":"acquisitions-api","timestamp":"2026-05-23T03:55:40.067Z"}
+{"level":"info","message":"Hello from Acquisition!","service":"acquisitions-api","timestamp":"2026-05-23T04:52:59.361Z"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [23/May/2026:04:52:59 +0000] \"GET / HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:149.0) Gecko/20100101 Firefox/149.0\"","service":"acquisitions-api","timestamp":"2026-05-23T04:52:59.389Z"}
+{"ip":"::ffff:172.18.0.1","level":"warn","message":"Bot request blocked","path":"/api/auth/sign-up","service":"acquisitions-api","timestamp":"2026-05-23T04:54:45.611Z","userAgent":"PostmanRuntime/7.49.1"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [23/May/2026:04:54:45 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 403 67 \"-\" \"PostmanRuntime/7.49.1\"","service":"acquisitions-api","timestamp":"2026-05-23T04:54:45.618Z"}
+{"ip":"::ffff:172.18.0.1","level":"warn","message":"Bot request blocked","path":"/api/auth/sign-up","service":"acquisitions-api","timestamp":"2026-05-23T04:58:17.881Z","userAgent":"PostmanRuntime/7.49.1"}
+{"level":"info","message":"::ffff:172.18.0.1 - - [23/May/2026:04:58:17 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 403 67 \"-\" \"PostmanRuntime/7.49.1\"","service":"acquisitions-api","timestamp":"2026-05-23T04:58:17.888Z"}

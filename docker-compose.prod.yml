@@ -1,0 +1,12 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: acquisitions-app-prod
+    command: node src/index.js
+    env_file:
+      - .env.production
+    ports:
+      - "${PORT:-3000}:${PORT:-3000}"
+    restart: unless-stopped

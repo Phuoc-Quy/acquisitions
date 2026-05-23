@@ -1,0 +1,28 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: acquisitions-app-dev
+    command: npm run dev
+    env_file:
+      - .env.development
+    ports:
+      - "${PORT:-3000}:${PORT:-3000}"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - neon-local
+    restart: unless-stopped
+
+  neon-local:
+    image: neondatabase/neon_local:latest
+    container_name: acquisitions-neon-local
+    env_file:
+      - .env.development
+    environment:
+      DELETE_BRANCH: "true"
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
